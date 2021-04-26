@@ -10,13 +10,19 @@ EditorBuildSettings:
     guid: 8673cf574910e1441b9851bb0011b87a
   - enabled: 1
     path: Assets/Scenes/Stage_1_Forrest.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: cee57cde06ab8c0469fc48f60500bc06
   - enabled: 1
-    path: Assets/Scenes/Stage_2_RuinedCity.unity
-    guid: 74545b82a6223fe4e955d4c9bead4668
-  - enabled: 1
-    path: Assets/Scenes/Stage_3_Beach.unity
-    guid: cbb529a7b31c2684cb70c7bc1b9c9b76
+    path: Assets/Scenes/Stage_2_City.unity
+    guid: 22f3e1d38db857445bcfe3e47904781d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/WinGame.unity
     guid: e07ff064d77f0394c81086724c3999ef
