@@ -7,28 +7,21 @@ public class projectLaser : MonoBehaviour
     //variables setting
     public float timeBetweenLaser = 0.15f;
     public GameObject projectile;
-    public AudioClip hitSound;
+
     float nextLaser;
-       
-    AudioSource audio;
-
-    void Start()
-    {
-        audio = GetComponent<AudioSource>();
-    }
-
+    // Start is called before the first frame update
     void Awake()
     {
         nextLaser = 0f;
     }
 
+    // Update is called once per frame
     void Update()
     {
         playerController thePlayer = transform.root.GetComponent<playerController>();
 
         if (Input.GetAxisRaw("Fire1") > 0 && nextLaser < Time.time)
         {
-            audio.PlayOneShot(hitSound);
             nextLaser = Time.time + timeBetweenLaser;
             Vector3 rotation;
             if (thePlayer.GetFacing() == -1f)

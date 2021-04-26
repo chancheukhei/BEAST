@@ -5,8 +5,8 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     //movement variables setting
-    public float walkSpeed = 5f;
-    public float rushSpeed = 10f;
+    public float walkSpeed = 8f;
+    public float rushSpeed = 15f;
 
     Rigidbody myRB;
     Animator myAnim;
@@ -18,17 +18,12 @@ public class playerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundChecker;
     public float jumpForce = 1f;
-    public AudioClip jumpSound;
-    AudioSource audio;
-
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
         facingRight = true;
-        audio = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
@@ -52,7 +47,6 @@ public class playerController : MonoBehaviour
             onGround = false;
             myAnim.SetBool("onGround", onGround);
             myRB.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
-            audio.PlayOneShot(jumpSound);
         }
         groundCollisions = Physics.OverlapSphere(groundChecker.position, groundCheckRadius, groundLayer);
 
