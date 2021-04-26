@@ -7,6 +7,8 @@ TagManager:
   - Portal
   - Door
   - Enemy
+  - Ground
+  - flashLight
   layers:
   - Default
   - TransparentFX
