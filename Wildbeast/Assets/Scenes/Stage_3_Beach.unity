@@ -9175,7 +9175,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 69827921b4ac6ff46b5c9af5df02122e,
         type: 3}
       propertyPath: m_Name
-      value: FishKin animation
+      value: Stage3 Boss
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 69827921b4ac6ff46b5c9af5df02122e,
         type: 3}
@@ -9251,6 +9251,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58385977db2770e42b7ce471a0a14a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1849964101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849964096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59bb91df230eec479e29c27082c50fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1852147535
