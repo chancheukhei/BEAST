@@ -27,8 +27,7 @@ public class shootLaser : MonoBehaviour
     {
 
     }
-<<<<<<< Updated upstream
-=======
+
 
     void OnTriggerEnter(Collider obj)
     {
@@ -39,5 +38,4 @@ public class shootLaser : MonoBehaviour
         }
     }
 
->>>>>>> Stashed changes
 }

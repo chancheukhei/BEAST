@@ -5,14 +5,10 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     //movement variables setting
-<<<<<<< Updated upstream
-    public float walkSpeed = 8f;
-    public float rushSpeed = 15f;
 
-=======
     public float walkSpeed = 5f;
     public float rushSpeed = 10f;
->>>>>>> Stashed changes
+
     Rigidbody myRB;
     Animator myAnim;
     bool facingRight;
