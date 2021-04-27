@@ -10,7 +10,8 @@ public class BossTouch : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Collision Detected");
-            SceneManager.LoadScene("GameOver");
+            playerHealth playerData = col.gameObject.GetComponent<playerHealth>();
+            playerData.causeDead();
         }
     }
 

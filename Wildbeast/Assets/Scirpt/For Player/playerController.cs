@@ -10,8 +10,9 @@ public class playerController : MonoBehaviour
     public float rushSpeed = 10f;
 
     Rigidbody myRB;
-    Animator myAnim;
+    public Animator myAnim;
     bool facingRight;
+    bool facingUp;
     //jump function
     bool onGround = false;
     Collider[] groundCollisions;
@@ -23,8 +24,9 @@ public class playerController : MonoBehaviour
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
-        myAnim = GetComponent<Animator>();
+        //myAnim = GetComponent<Animator>();
         facingRight = true;
+        facingUp = true;
     }
 
     // Update is called once per frame
@@ -38,7 +40,9 @@ public class playerController : MonoBehaviour
     {
         // walk function
         float move = Input.GetAxis("Horizontal");
+        float move2 = Input.GetAxis("Vertical");
         myAnim.SetFloat("speed", Mathf.Abs(move));
+        myAnim.SetFloat("speed", Mathf.Abs(move2));
         // rush function
         float rush = Input.GetAxisRaw("Fire3");
         myAnim.SetFloat("rush", Mathf.Abs(rush));
@@ -66,35 +70,63 @@ public class playerController : MonoBehaviour
         float firing = Input.GetAxis("Fire1");
         myAnim.SetFloat("shooting", firing);
         //movement function
-        //for rush movement
 
-        if ((move > 0 || firing > 0) && onGround)
+        //for Horizontal movement
+        if ((move > 0 || move2 > 0 || firing > 0) && onGround)
         {
-            myRB.velocity = new Vector3(move * walkSpeed, myRB.velocity.y, 0f);
+            myRB.velocity = new Vector3(move * walkSpeed, myRB.velocity.y, move2 * walkSpeed);
         }
-        //for walk movement
         else
         {
-            myRB.velocity = new Vector3(move * rushSpeed, myRB.velocity.y, 0f);
+            myRB.velocity = new Vector3(move * rushSpeed, myRB.velocity.y, move2 * rushSpeed);
         }
         //flip function
         if (move > 0 && !facingRight)
         {
-            Flip();
+            FlipRight();
         }
         else if (move < 0 && facingRight)
         {
-            Flip();
+            FlipLeft();
         }
     }
 
-    void Flip()
+    void FlipRight()
     {
         facingRight = !facingRight;
+        /*
         Vector3 Scale = transform.localScale;
-        Scale.y *= -1;
+        Scale.x *= -1;
         transform.localScale = Scale;
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        */
+        transform.Rotate(0, 0, 0, Space.Self);
+
     }
+    void FlipLeft()
+    {
+        facingRight = !facingRight;
+        /*
+        Vector3 Scale = transform.localScale;
+        Scale.x *= -1;
+        transform.localScale = Scale;
+        transform.localRotation = Quaternion.Euler(180f, 180f, -180f);
+        */
+        transform.Rotate(0, 180, 0, Space.Self);
+    }
+
+    void FlipUp()
+    {
+        facingUp = !facingUp;
+        transform.Rotate(0, -90, 0, Space.Self);
+    }
+    void FlipDown()
+    {
+        facingUp = !facingUp;
+        transform.Rotate(0, 90, 0, Space.Self);
+    }
+
+
 
     public float GetFacing()
     {

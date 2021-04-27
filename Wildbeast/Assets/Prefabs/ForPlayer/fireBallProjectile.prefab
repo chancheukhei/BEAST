@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3647534877249420755}
   - component: {fileID: 3647534877249420752}
   - component: {fileID: 3647534877249420753}
+  - component: {fileID: 7744537946320546784}
   m_Layer: 0
   m_Name: fireBallProjectile
   m_TagString: Untagged
@@ -62,7 +63,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c121a2d842ad59d48b9f3cb686f84601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 4
+--- !u!114 &7744537946320546784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647534877249420758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2121c01b5552fe439475106f7237644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushBackForce: 20
+  speed: 20
 --- !u!1 &3647534877337175426
 GameObject:
   m_ObjectHideFlags: 0
@@ -4843,7 +4858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2121c01b5552fe439475106f7237644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  pushBackForce: 0
   speed: 5
 --- !u!1001 &4668136324402858521
 PrefabInstance:

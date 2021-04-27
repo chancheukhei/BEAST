@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class playerHealth : MonoBehaviour
     {
         Instantiate(playerDeathFX, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
         damage_Indicator_Image.color = flashColor;
+        GameOverMenu.now = SceneManager.GetActiveScene().buildIndex;
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 }

@@ -9,6 +9,8 @@ public class EnemyDamage : MonoBehaviour
     public float pushBackForce;
     float nextDamage; // next time of damage
     bool playerInRange = false;
+
+    AudioSource audioSource;
     GameObject thePlayer;
     playerHealth thePlayerHealth;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class EnemyDamage : MonoBehaviour
         nextDamage = Time.time;
         thePlayer = GameObject.FindGameObjectWithTag("Player");
         thePlayerHealth = thePlayer.GetComponent<playerHealth>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class EnemyDamage : MonoBehaviour
             nextDamage = Time.time + damageRate;
 
             pushBack(thePlayer.transform);
+            audioSource.Play();
         }
     }
 
