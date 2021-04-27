@@ -5,16 +5,21 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     //movement variables setting
+<<<<<<< Updated upstream
     public float walkSpeed = 8f;
     public float rushSpeed = 15f;
 
+=======
+    public float walkSpeed = 5f;
+    public float rushSpeed = 10f;
+>>>>>>> Stashed changes
     Rigidbody myRB;
     Animator myAnim;
     bool facingRight;
     //jump function
     bool onGround = false;
     Collider[] groundCollisions;
-    float groundCheckRadius = 4.5f;
+    float groundCheckRadius = 5f;
     public LayerMask groundLayer;
     public Transform groundChecker;
     public float jumpForce = 1f;

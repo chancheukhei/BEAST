@@ -7,6 +7,21 @@ public class projectLaser : MonoBehaviour
     //variables setting
     public float timeBetweenLaser = 0.15f;
     public GameObject projectile;
+<<<<<<< Updated upstream
+=======
+
+    //bullet info
+    public int bullet;
+    public AudioClip hitSound;
+    float nextLaser;
+
+    AudioSource audio;
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+>>>>>>> Stashed changes
 
     float nextLaser;
     // Start is called before the first frame update

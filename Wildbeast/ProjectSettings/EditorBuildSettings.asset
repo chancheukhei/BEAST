@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 8673cf574910e1441b9851bb0011b87a
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Stage_1_Forrest.unity
     guid: cee57cde06ab8c0469fc48f60500bc06
   - enabled: 1
@@ -24,6 +25,8 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+=======
+>>>>>>> Stashed changes
     path: Assets/Scenes/WinGame.unity
     guid: e07ff064d77f0394c81086724c3999ef
   - enabled: 1

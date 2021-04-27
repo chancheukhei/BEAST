@@ -4,30 +4,22 @@ using UnityEngine;
 
 public class shootLaser : MonoBehaviour
 {
-    //laser variables setting
-    public float range = 10f;
-    public float damge = 5f;
-
-    Ray shootRay;
-    RaycastHit hit;
-    int shootableMask;
-    LineRenderer laserLine;
+    public float damage;
+    public float speed;
+    Rigidbody myRB;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        shootableMask = LayerMask.GetMask("Shootable");
-        laserLine = GetComponent<LineRenderer>();
+        myRB = GetComponentInParent<Rigidbody>();
 
-        shootRay.origin = transform.position;
-        shootRay.direction = transform.forward;
-        laserLine.SetPosition(0, transform.position);
-
-        if (Physics.Raycast(shootRay, out hit, range, shootableMask))
+        if (transform.rotation.y > 0)
         {
-            //hit an emeny goes here
-            laserLine.SetPosition(1, hit.point);
+            myRB.AddForce(Vector3.right * speed, ForceMode.Impulse);
         }
-        else laserLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+        else
+        {
+            myRB.AddForce(Vector3.right * -speed, ForceMode.Impulse);
+        }
     }
 
     // Update is called once per frame
@@ -35,4 +27,17 @@ public class shootLaser : MonoBehaviour
     {
 
     }
+<<<<<<< Updated upstream
+=======
+
+    void OnTriggerEnter(Collider obj)
+    {
+        if (obj.gameObject.layer == LayerMask.NameToLayer("Shootable"))
+        {
+            myRB.velocity = Vector3.zero;
+            Destroy(gameObject);
+        }
+    }
+
+>>>>>>> Stashed changes
 }
