@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class projectLaser : MonoBehaviour
 {
     //variables setting
-    public float timeBetweenLaser = 0.15f;
+    public float intTimeBetweenLaser = 0.3f;
+    float timeBetweenLaser;
     public GameObject projectile;
     float nextLaser;
 
@@ -25,7 +26,8 @@ public class projectLaser : MonoBehaviour
 
     void Start()
     {
-
+        setTimeBetweenLaser(intTimeBetweenLaser);
+        setRemainingRounds(20);
     }
 
 
@@ -69,5 +71,25 @@ public class projectLaser : MonoBehaviour
         remainingRounds += round;
         if (remainingRounds > maxRound) remainingRounds = maxRound;
 
+    }
+
+    public int getRemainingRounds()
+    {
+        return remainingRounds;
+    }
+
+    public void setRemainingRounds(int rounds)
+    {
+        remainingRounds = rounds;
+    }
+
+    public float getTimeBetweenLaser()
+    {
+        return timeBetweenLaser;
+    }
+
+    public void setTimeBetweenLaser(float timing)
+    {
+        timeBetweenLaser = timing;
     }
 }
